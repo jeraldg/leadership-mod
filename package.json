@@ -1,0 +1,28 @@
+{
+  "name": "leadership-mod",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "antd": "^3.14.1",
+    "indexof": "0.0.1",
+    "meteor-node-stubs": "^0.4.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-mounter": "^1.2.0",
+    "react-player": "^1.9.3"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {}
+}
