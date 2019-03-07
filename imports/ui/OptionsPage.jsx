@@ -8,18 +8,18 @@ const ButtonGroup = Button.Group;
 export default class OptionsPage extends Component {
 
   state = {
-    percent: 0,
-    ended: false,
+    percent: 100,
+    ended: true,
     playing: false,
     muted: true,
   }
 
-  increase = () => {
+  decrease = () => {
 
     let { percent } = this.state;
 
     let timerId = setInterval(() => {
-      this.setState((prevState) => ({ percent: prevState.percent + 1 }))
+      this.setState((prevState) => ({ percent: prevState.percent - 1 }))
     }, 800);
 
     setTimeout(() => { clearInterval(timerId); }, 80000);
@@ -52,7 +52,7 @@ export default class OptionsPage extends Component {
         {ended && <div>
           <Row type="flex" justify="center" align="middle">
             <Col xs={15} sm={15} md={15} lg={15} xl={15}>
-              {this.increase()}
+              {this.decrease()}
               <Progress percent={this.state.percent} />
             </Col>
 
