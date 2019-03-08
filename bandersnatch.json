@@ -1,0 +1,94 @@
+{
+    "scenarios": {
+        "S1": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "She should aggressively asks the team to reply and call for actions",
+                    "url": "S2"
+                },
+                {
+                    "text": "She gives up on the group",
+                    "url": "S7"
+                }
+            ],
+            "video": "cat"
+        },
+        "S2": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "Ask Gabriel what he wants",
+                    "url": "S3"
+                },
+                {
+                    "text": "Ignore him and continue",
+                    "url": "S4"
+                }
+            ],
+            "video": "cat"
+        },
+        "S3": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "See what happens",
+                    "url": "S3-2"
+                }
+            ],
+            "video": "cat"
+        },
+        "S3-2": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "Victoria makes the unpopular decision to totally change the project",
+                    "url": "S8"
+                },
+                {
+                    "text": "Victoria decides to stick with the current failing plan",
+                    "url": "S7"
+                }
+            ],
+            "video": "cat"
+        },
+        "S4": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "Victoria strongly insists on her idea",
+                    "url": "S5"
+                },
+                {
+                    "text": "Victoria follows the majority vote",
+                    "url": "S6"
+                }
+            ],
+            "video": "cat"
+        },
+        "S5": {
+            "question": "What should Victoria do?",
+            "options": [
+                {
+                    "text": "Ignore them and tank the project",
+                    "url": "unsure"
+                },
+                {
+                    "text": "Convince the group to join the cause",
+                    "url": "unsure"
+                }
+            ],
+            "video": "cat"
+        },
+        "S6": {
+            "question": "Group works together to deliver project",
+            "options": [
+                {
+                    "text": "Victoria strongly insists on her idea",
+                    "url": "S5"
+                }
+            ],
+            "video": "cat"
+        },
+    }
+}

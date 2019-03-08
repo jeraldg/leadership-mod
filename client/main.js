@@ -15,13 +15,13 @@ import PublicLayout from '../imports/layout/PublicLayout.jsx';
 
 
 
-// FlowRouter.route('/', {
-//   action: function (params, queryParams) {
-//     mount(PublicLayout, {
-//       content: <HomePage />
-//     });
-//   }
-// });
+FlowRouter.route('/', {
+  action: function (params, queryParams) {
+    mount(PublicLayout, {
+      content: <HomePage />
+    });
+  }
+});
 
 FlowRouter.route('/game', {
   action: function (params, queryParams) {

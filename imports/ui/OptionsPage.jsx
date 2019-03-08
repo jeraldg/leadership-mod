@@ -29,7 +29,6 @@ export default class OptionsPage extends Component {
     setTimeout(() => {
       this.setState({ playing: true });
       this.setState({ muted: false });
-      console.log('hereee');
     }, 100);
   }
 
@@ -42,12 +41,12 @@ export default class OptionsPage extends Component {
 
     let size = "large";
     let { ended } = this.state;
-    let { video, options } = this.props;
+    let { options } = this.props;
 
     return (
       <div style={{ background: "white", height: '100vh' }}>
         <Row type="flex" justify="center" align="middle">
-          <ReactPlayer url='/videos/catvines.mp4' muted={this.state.muted} playing={this.state.playing} onReady={this.handleOnReady} onEnded={this.onEnded} />
+          <ReactPlayer url={`/videos/${options.video}.mp4}`} muted={this.state.muted} playing={this.state.playing} onReady={this.handleOnReady} onEnded={this.onEnded} />
         </Row>
         {ended && <div>
           <Row type="flex" justify="center" align="middle">
@@ -58,8 +57,9 @@ export default class OptionsPage extends Component {
 
           </Row>
           <Row type="flex" justify="center" align="middle">
-            <Button size={size}>Ask Gabriel what he wants</Button>
-            <Button size={size}>Ignore him and continue</Button>
+            <Button size={size} className="ButtonA" href={options.buttonA.url}>{options.buttonA.text}</Button>
+            <Col span={6}></Col>
+            <Button size={size} className="ButtonB" href={options.buttonB.url}>{options.buttonB.text}</Button>
           </Row>
         </div>}
 
