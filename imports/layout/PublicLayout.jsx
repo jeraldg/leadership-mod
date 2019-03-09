@@ -19,22 +19,14 @@ export default class PublicLayout extends Component {
 
   componentWillMount() {
     let { path } = FlowRouter.current();
-    let { menu, cohorts } = this.props;
 
-    switch(path) {
-      default:
-        this.setState({ current: 'home' })
+    if (path.includes('home')){
+      this.setState({ current: 'home' });
+    } else if (path.includes('game')){
+      this.setState({ current: 'game' });
+    } else {
+      this.setState({ current: 'case' });
     }
-  }
-
-  onCollapse = (collapsed) => {
-    this.setState({ collapsed });
-  }
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
   }
 
 
@@ -42,12 +34,15 @@ export default class PublicLayout extends Component {
     let { key } = e;
     this.setState({ current: e.key });
     let { path } = FlowRouter.current();
+    console.log(path);
 
-    switch(path) {
+    switch(key) {
       case 'home':
         FlowRouter.go('/');
+        break;
       case 'game':
         FlowRouter.go('/game');
+        break;
     }
 
   }
@@ -83,7 +78,7 @@ export default class PublicLayout extends Component {
             </Menu.Item>
 
             <SubMenu
-              key="sub1"
+              key="case"
               title={<span><Icon type="rise" /><span>Case Studies</span></span>}
             >
               {subMenus.map(subMenu => <Menu.Item key={subMenu}>{subMenu}</Menu.Item>)}
@@ -98,11 +93,11 @@ export default class PublicLayout extends Component {
 
             
           </Header> */}
-          <Content style={{ background: '#f9fafb' }}>
+          <Content style={{ background: 'black' }}>
             <div>{this.props.content}</div>
           </Content>
 
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer style={{ textAlign: 'center', background:'black' }}>
             Team 5 ©2019
           </Footer>
         </Layout>

@@ -11,6 +11,7 @@ import OptionsPage from '../imports/ui/OptionsPage.jsx';
 import HomePage from '../imports/ui/HomePage.jsx';
 import BanderSnatch from '../imports/ui/BanderSnatch.jsx';
 import PublicLayout from '../imports/layout/PublicLayout.jsx';
+import Game from '../imports/ui/Game';
 
 
 
@@ -26,15 +27,15 @@ FlowRouter.route('/', {
 FlowRouter.route('/game', {
   action: function (params, queryParams) {
     mount(PublicLayout, {
-      content: <BanderSnatch />
+      content: <Game />
     });
   }
 });
 
-FlowRouter.route('/', {
+FlowRouter.route('/game/:scenario', {
   action: function (params, queryParams) {
     mount(PublicLayout, {
-      content: <OptionsPage />
+      content: <BanderSnatch />
     });
   }
 });
