@@ -97,9 +97,9 @@ export default class PublicLayout extends Component {
             <div>{this.props.content}</div>
           </Content>
 
-          <Footer style={{ textAlign: 'center', background:'black' }}>
+          {/* <Footer style={{ textAlign: 'center', background:'black' }}>
             Team 5 ©2019
-          </Footer>
+          </Footer> */}
         </Layout>
       </Layout>
     );

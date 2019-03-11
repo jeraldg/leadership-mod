@@ -22,6 +22,7 @@ export default class BanderSnatch extends Component {
           options={bandersnatch.scenarios[scenario].options}
           question={bandersnatch.scenarios[scenario].question}
           video={bandersnatch.scenarios[scenario].video}
+          scenario = {scenario}
         />
 
       </div>

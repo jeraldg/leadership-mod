@@ -12,59 +12,81 @@ export default class OptionsPage extends Component {
     this.state = {
       percent: 0,
       ended: false,
-      playing: true,
+      playing: false,
       muted: true,
+      timerId: '',
     }
   }
-  
+
 
   increase = () => {
 
-    let { percent } = this.state;
+    if (this.state.percent >= 100){
+      clearInterval(this.state.timerId);
+    } 
 
-    if ( percent >= 100){
-      clearInterval(this.state.timerId); 
-    }
+    this.setState((prevState) => ({ percent: prevState.percent + 1 }))
 
+  }
+
+  increaseWithTime = (seconds) => {
     let timerId = setInterval(() => {
-      this.setState((prevState) => ({ percent: prevState.percent + 1 }))
-    }, 800);
+      this.increase();
+    }, seconds);
 
-    this.setState({timerId: timerId});
+    this.setState({ timerId: timerId });
+  }
+
+  componentWillUnmount = () => {
+    // use timerId from the state to clear the interval
+    clearInterval(this.state.timerId);
   }
 
   handleOnReady = () => {
     setTimeout(() => {
-      this.setState({ muted: false });
+      this.setState({ muted: false, playing: true });
     }, 100);
   }
 
   handleClick = (url) => {
-    FlowRouter.go(`/game/${url}`)
+    FlowRouter.go(`/game/${url}`);
+    clearInterval(this.state.timerId);
+    this.setState({
+      percent: 0,
+      ended: false,
+      playing: false,
+      muted: true,
+      timerId: '',
+    })
   }
 
   onEnded = () => {
-    this.setState({ ended: true })
+    this.setState({ ended: true });
+    this.increaseWithTime(300);
   }
 
 
   render() {
 
-    // console.log('hello');
-    // console.log(this.state);
     let size = "large";
     let { ended } = this.state;
-    let { options, question, video } = this.props;
+    let { options, question, video, scenario } = this.props;
 
     return (
       <div>
         <Row type="flex" justify="center" align="middle">
-          <ReactPlayer url={`/videos/${video}.mp4`} muted={this.state.muted} playing={this.state.playing} onReady={this.handleOnReady} onEnded={this.onEnded} />
+          <ReactPlayer url={`/videos/${video}.mp4`} 
+          muted={this.state.muted} 
+          playing={this.state.playing} 
+          onReady={this.handleOnReady} 
+          onEnded={this.onEnded} 
+          width="1000px"
+          height="500px"
+          key={scenario}/>
         </Row>
         {ended && <div>
-          <Row type="flex" justify="center" align="middle" style={{padding: 20}}>
+          <Row type="flex" justify="center" align="middle" style={{ padding: 20 }}>
             <Col xs={15} sm={15} md={15} lg={15} xl={15}>
-              {this.increase}
               <Progress percent={this.state.percent} />
             </Col>
 
