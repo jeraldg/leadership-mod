@@ -1,0 +1,90 @@
+body, h1, h2, h3, h4, h5, h6, p, .ant-row {
+  font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+a.ant-btn.glow-button {
+  border-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 48px;
+  font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+@keyframes jumping-button {
+  0% {
+    -webkit-transform: scale(1.1, .9);
+    transform: scale(1.1, .9);
+  }
+  50% {
+    -webkit-transform: scale(.9, 1.1) translateY(-.5rem)
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.glow-button :hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  /* name-duration-function(ease,eas-in,linear)-delay-count-direction */
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+}
+input {
+  display: none;
+}
+input:checked + label {
+  opacity: 1;
+}
+input:checked + label:after {
+  content: '';
+  height: 4px;
+  background: radial-gradient(#fff, transparent);
+  opacity: 0.5;
+  width: 110px;
+  border-radius: 100%;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.player-wrapper {
+  width: auto; /* Reset width */
+  height: auto; /* Reset height */
+}
+.react-player {
+  padding-top: 56.25%;  /* Percentage ratio for 16:9 */
+  position: relative; /* Set to relative */
+}
+
+.react-player > div {
+  position: absolute; /* Scaling will occur since parent is relative now */
+}
+

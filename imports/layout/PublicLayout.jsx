@@ -5,24 +5,44 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const { Header, Content, Footer, Sider } = Layout;
 
+import Test from './Test';
+
 
 export default class PublicLayout extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      current: '',
-      collapsed: false,
-    }
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  test = () => {
+    const sidebarBox = document.querySelector('#box'),
+      sidebarBtn = document.querySelector('#btn');
+
+    sidebarBtn.addEventListener('click', event => {
+      sidebarBtn.classList.toggle('active');
+      sidebarBox.classList.toggle('active');
+    });
+
+    window.addEventListener('keydown', event => {
+
+      if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
+        sidebarBtn.classList.remove('active');
+        sidebarBox.classList.remove('active');
+      }
+    });
+  }
+
+  componentDidMount() {
+    this.test();
   }
 
   componentWillMount() {
     let { path } = FlowRouter.current();
 
-    if (path.includes('home')){
+    if (path.includes('home')) {
       this.setState({ current: 'home' });
-    } else if (path.includes('game')){
+    } else if (path.includes('game')) {
       this.setState({ current: 'game' });
     } else {
       this.setState({ current: 'case' });
@@ -36,7 +56,7 @@ export default class PublicLayout extends Component {
     let { path } = FlowRouter.current();
     console.log(path);
 
-    switch(key) {
+    switch (key) {
       case 'home':
         FlowRouter.go('/');
         break;
@@ -52,15 +72,12 @@ export default class PublicLayout extends Component {
   }
 
   render() {
-
-    let subMenus = this.createSubMenu();
-
     return (
       <Layout className="layout">
-        <Header style={{ width: '100%', background: 'white' }}>
+        {/* <Header style={{ width: '100%', background: 'black' }}>
 
           <Menu
-            theme="light"
+            theme="dark"
             mode="horizontal"
             style={{ lineHeight: '64px' }}
             onClick={this.handleClick}
@@ -87,8 +104,9 @@ export default class PublicLayout extends Component {
           </Menu>
 
 
-        </Header>
+        </Header> */}
         <Layout>
+          <Test nav={['game', 'case studies']}></Test>
           {/* <Header style={{ background: '#fff', padding: 0 }}>
 
             

@@ -12,7 +12,7 @@
                     "url": "S7"
                 }
             ],
-            "video": "cat"
+            "video": "S1"
         },
         "S2": {
             "question": "What should Victoria do?",
@@ -26,7 +26,7 @@
                     "url": "S4"
                 }
             ],
-            "video": "catvines"
+            "video": "S2"
         },
         "S3": {
             "question": "What should Victoria do?",
@@ -36,7 +36,7 @@
                     "url": "S3-2"
                 }
             ],
-            "video": "cat"
+            "video": "S3"
         },
         "S3-2": {
             "question": "What should Victoria do?",

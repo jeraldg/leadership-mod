@@ -11,19 +11,19 @@ export default class Game extends Component {
   render() {
 
     return (
+      <div style={{ background: "black", height: '100vh' }}>
 
-      <div>
-        <Row style={{ background: "black", height: '350px'}} type="flex" justify="center" align="middle">
+        <Row style={{ background: "black", height: '350px' }} type="flex" justify="end" align="middle">
 
-          <div style={{ width: '400px', height: '350px' }}>
-            <img src="/images/bandersnatch_poster.jpg" alt="Poster" height="auto" width="100%"></img>
+          <Button className="glow-button start-game" href='/game/s1' style={{left:"5%",borderRadius:"12px", width:"15%", height:"15%" }}>START GAME</Button>
+
+          <div style={{ width: '40%', height: '100vh' }}>
+            <img src="/images/bandersnatch_poster.jpg" alt="Poster" height="100%" width="100%"></img>
           </div>
 
         </Row>
 
-        <Row style={{ background: "black"}} type="flex" justify="center" align="middle">
-          <Button className="jumping-button" href='/game/s1' style={{ margin: '0 auto' }}>Let's play</Button>
-        </Row>
+        {/* <Button className="glow-button" href='/game/s1' style={{ margin: '0 auto' }}>Start Game</Button> */}
       </div>
 
 
