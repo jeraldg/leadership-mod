@@ -37,11 +37,11 @@ a.ant-btn.glow-button {
   }
 }
 
-.glow-button :hover {
+/* .glow-button {
   color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  box-shadow: 120px 80px 40px 20px #0ff !important;
   /* name-duration-function(ease,eas-in,linear)-delay-count-direction */
-}
+} */
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 *,

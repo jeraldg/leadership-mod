@@ -7,18 +7,21 @@ const ButtonGroup = Button.Group;
 export default class Game extends Component {
 
 
+  // style={{left:"5%",borderRadius:"12px", width:"15%", height:"15%" }}
+
 
   render() {
 
     return (
-      <div style={{ background: "black", height: '100vh' }}>
+      <div style={{ background: "#000", height: '100vh' }}>
 
-        <Row style={{ background: "black", height: '350px' }} type="flex" justify="end" align="middle">
+        <Row style={{ background: "#000" }} type="flex" justify="end" align="middle">
 
-          <Button className="glow-button start-game" href='/game/s1' style={{left:"5%",borderRadius:"12px", width:"15%", height:"15%" }}>START GAME</Button>
+          <div style={{ display: 'flex', position: 'absolute', width: '100%' }}>
+            <Button style={{ margin: 'auto', position: 'relative' }} className="glow-button start-game" href='/game/s1' >START GAME</Button>
+          </div>
 
-          <div style={{ width: '40%', height: '100vh' }}>
-            <img src="/images/bandersnatch_poster.jpg" alt="Poster" height="100%" width="100%"></img>
+          <div style={{ width: '100%', height: '100vh', minWidth: '50%', background: 'url("/images/bandersnatch_poster.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }}>
           </div>
 
         </Row>
