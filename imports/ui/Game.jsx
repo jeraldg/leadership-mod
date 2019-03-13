@@ -21,7 +21,7 @@ export default class Game extends Component {
             <Button style={{ margin: 'auto', position: 'relative' }} className="glow-button start-game" href='/game/s1' >START GAME</Button>
           </div>
 
-          <div style={{ width: '100%', height: '100vh', minWidth: '50%', background: 'url("/images/bandersnatch_poster.jpg")', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }}>
+          <div style={{ width: '100%', height: '100vh', minWidth: '50%', background: 'url("/images/bander_wallpaper.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }}>
           </div>
 
         </Row>
