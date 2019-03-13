@@ -41,7 +41,7 @@ FlowRouter.route('/case-studies', {
   }
 });
 
-FlowRouter.route('/game/:scenario', {
+FlowRouter.route('/:scenario', {
   action: function (params, queryParams) {
     mount(PublicLayout, {
       content: <BanderSnatch />

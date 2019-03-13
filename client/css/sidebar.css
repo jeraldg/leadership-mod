@@ -95,12 +95,14 @@ body {
     padding: 15px 60px;
     transition: all 250ms;
 	color: white;
-	text-transform: capitalize;
+    text-transform: capitalize;
+    
 }
 
 #items .item:hover {
     padding: 15px 45px;
     background-color: rgba(52, 56, 56, 0.2);
+    text-decoration: underline;
 }
 
 #btn, #btn * {
