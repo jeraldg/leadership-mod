@@ -1,0 +1,141 @@
+{
+    "scenarios": {
+        "INTRO-1": {
+            "options": [
+                {
+                    "text": "Start Game",
+                    "url": "Intro"
+                }
+            ],
+            "video": "leadership_intro"
+        },
+        "INTRO": {
+            "options": [
+                {
+                    "text": "Talk to Jon and ask for help",
+                    "url": "S1"
+                },
+                {
+                    "text": "Give up on the group",
+                    "url": "Ending"
+                }
+            ],
+            "video": "Intro"
+        },
+        "S1": {
+            "options": [
+                {
+                    "text": "Talk to George",
+                    "url": "S3"
+                },
+                {
+                    "text": "Ignore George and move on",
+                    "url": "S4"
+                }
+            ],
+            "video": "S1"
+        },
+        "S3": {
+            "options": [
+                {
+                    "text": "Continue",
+                    "url": "S3-2"
+                }
+            ],
+            "video": "S3"
+        },
+        "S3-2": {
+            "options": [
+                {
+                    "text": "Scratch the current idea",
+                    "url": "S3A"
+                },
+                {
+                    "text": "Continue with the current idea",
+                    "url": "S3B"
+                }
+            ],
+            "video": "S3-2"
+        },
+        "S3A": {
+            "options": [
+                {
+                    "text": "The End",
+                    "url": "/"
+                }
+            ],
+            "video": "S3A"
+        },
+        "S3B": {
+            "options": [
+                {
+                    "text": "Presentation Day",
+                    "url": "S3B-2"
+                }
+            ],
+            "video": "S3B"
+        },
+        "S3B-2": {
+            "options": [
+                {
+                    "text": "The End",
+                    "url": "/"
+                }
+            ],
+            "video": "S3B-2"
+        },
+        "S4": {
+            "options": [
+                {
+                    "text": "Talk to George",
+                    "url": "S4A"
+                },
+                {
+                    "text": "Ignore George",
+                    "url": "S4B"
+                }
+            ],
+            "video": "S4"
+        },
+        "S4A": {
+            "options": [
+                {
+                    "text": "George tried contributing",
+                    "url": "S5A"
+                },
+                {
+                    "text": "George continued his ways",
+                    "url": "S5B"
+                }
+            ],
+            "video": "S4A"
+        },
+        "S5A": {
+            "options": [
+                {
+                    "text": "The End",
+                    "url": "/"
+                }
+            ],
+            "video": "S5A"
+        },
+        "S5B": {
+            "options": [
+                {
+                    "text": "The End",
+                    "url": "/"
+                }
+            ],
+            "video": "S5B"
+        },
+        "S4B": {
+            "options": [
+                {
+                    "text": "The End",
+                    "url": "/"
+                }
+            ],
+            "video": "S4B"
+        }
+    }
+}
