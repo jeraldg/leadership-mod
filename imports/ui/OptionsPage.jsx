@@ -141,6 +141,7 @@ export default class OptionsPage extends Component {
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>
+                      <Button style={{ background: 'red', width: '100px', height: '100px', position: 'absolute', left: '0', opacity:0 }} onClick={this.handleClick.bind(this, option.url)}></Button>
                     </div>
                   )
                 }
