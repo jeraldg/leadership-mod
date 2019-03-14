@@ -63,21 +63,15 @@
         },
         "S3B": {
             "options": [
-                {
-                    "text": "Presentation Day",
-                    "url": "S3B-2"
-                }
             ],
-            "video": "S3B"
+            "video": "S3B",
+            "url": "S3B-2"
         },
         "S3B-2": {
             "options": [
-                {
-                    "text": "The End",
-                    "url": "/"
-                }
             ],
-            "video": "S3B-2"
+            "video": "S3B-2",
+            "url": "/"
         },
         "S4": {
             "options": [
@@ -107,30 +101,21 @@
         },
         "S5A": {
             "options": [
-                {
-                    "text": "The End",
-                    "url": "/"
-                }
             ],
-            "video": "S5A"
+            "video": "S5A",
+            "url": "/"
         },
         "S5B": {
             "options": [
-                {
-                    "text": "The End",
-                    "url": "/"
-                }
             ],
-            "video": "S5B"
+            "video": "S5B",
+            "url": "/"
         },
         "S4B": {
             "options": [
-                {
-                    "text": "The End",
-                    "url": "/"
-                }
             ],
-            "video": "S4B"
+            "video": "S4B",
+            "url": "/"
         }
     }
 }

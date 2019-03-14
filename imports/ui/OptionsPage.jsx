@@ -21,6 +21,7 @@ export default class OptionsPage extends Component {
   componentWillUnmount = () => {
     // use timerId from the state to clear the interval
     clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
+    this.state.suspense.stop();
   }
 
   handleOnReady = () => {
@@ -31,7 +32,11 @@ export default class OptionsPage extends Component {
 
   handleClick = (url) => {
     FlowRouter.go(`/${url}`);
-    clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
+    if (this.props.options.length == 0){
+      clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
+      this.state.supense.stop();
+    }
+    
     this.setState({
       percent: 0,
       ended: false,
@@ -49,11 +54,14 @@ export default class OptionsPage extends Component {
     } else {
       let progressBarShow = setTimeout(() => {
         this.setState({ changed: true });
+        
       }, 1000);
+      let suspense = new Audio('/audio/suspense.mp3');
+      suspense.play();
       let progressBarTimer = setTimeout(() => {
         this.handleClick(this.state.url);
       }, 21000);
-      this.setState({ progressBarTimer: progressBarTimer, progressBarShow: progressBarShow });
+      this.setState({ progressBarTimer: progressBarTimer, progressBarShow: progressBarShow, suspense:suspense });
     }
     
   }
@@ -81,8 +89,8 @@ export default class OptionsPage extends Component {
             playing={this.state.playing}
             onReady={this.handleOnReady}
             onEnded={this.onEnded}
-            width="100vw"
-            height="auto !important"
+            width="90vw"
+            height="auto"
             key={scenario}
             controls={true}
           />
