@@ -52,7 +52,7 @@ export default class OptionsPage extends Component {
       }, 1000);
       let progressBarTimer = setTimeout(() => {
         this.handleClick(this.state.url);
-      }, 11000);
+      }, 21000);
       this.setState({ progressBarTimer: progressBarTimer, progressBarShow: progressBarShow });
     }
     
