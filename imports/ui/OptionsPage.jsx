@@ -70,6 +70,8 @@ export default class OptionsPage extends Component {
     let { options, question, video, scenario } = this.props;
     let optionsMissing = options.length==0 ? true : false
 
+    // console.log(this.state)
+
     return (
       <div>
         <Row type="flex" justify="center" align="middle" style={{ paddingTop: "50px" }}>
@@ -92,7 +94,7 @@ export default class OptionsPage extends Component {
         {ended && !optionsMissing &&
 
 
-          <div key={`div${this.state.url}`}>
+          <div key={`div${this.props.scenario}`}>
             <div className="container">
               {changed && <input type="radio" className="radio" name="progress" value="zero" id="zero" key="zero" defaultChecked={changed} />}
 
