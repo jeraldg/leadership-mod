@@ -22,7 +22,7 @@ export default class OptionsPage extends Component {
     // use timerId from the state to clear the interval
     clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
     if (this.state.suspense != undefined){
-      this.state.suspense.stop();
+      this.state.suspense.pause();
     } 
     if (this.state.progressBarTimer != undefined){
       clearInterval(this.state.progressBarTimer);
@@ -42,7 +42,9 @@ export default class OptionsPage extends Component {
     // console.log(this.state);
     FlowRouter.go(`/${url}`);
     if (this.state.suspense != undefined){
-      this.state.suspense.stop();
+      console.log('came here');
+      console.log(this.state);
+      this.state.suspense.pause();
     } 
     if (this.state.progressBarTimer != undefined){
       clearInterval(this.state.progressBarTimer);
@@ -57,7 +59,7 @@ export default class OptionsPage extends Component {
       playing: false,
       muted: true,
       changed: false,
-      url: this.props.options[0].url,
+      url: this.props.url,
     })
   }
 
