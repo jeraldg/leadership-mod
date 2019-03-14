@@ -33,7 +33,7 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/case-studies', {
+FlowRouter.route('/pre-game', {
   action: function (params, queryParams) {
     mount(PublicLayout, {
       content: <CaseStudies />

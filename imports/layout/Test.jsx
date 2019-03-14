@@ -25,8 +25,8 @@ export default class Test extends Component {
       case 'game':
         FlowRouter.go('/');
         break;
-      case 'case studies':
-        FlowRouter.go('/case-studies');
+      default:
+        FlowRouter.go('/pre-game');
         break;
     }
 
