@@ -31,7 +31,7 @@ body {
 
 .progress-bar {
   height: 3px;
-  transition: 15s linear;
+  transition: 10s linear;
   transition-property: width, background;
 }
 

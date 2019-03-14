@@ -76,7 +76,7 @@ export default class OptionsPage extends Component {
       suspense.play();
       let progressBarTimer = setTimeout(() => {
         this.handleClick(this.state.url);
-      }, 16000);
+      }, 11000);
       this.setState({ progressBarTimer: progressBarTimer, progressBarShow: progressBarShow, suspense:suspense });
     }
     
