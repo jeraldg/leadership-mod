@@ -106,7 +106,7 @@ export default class PublicLayout extends Component {
 
         </Header> */}
         <Layout>
-          <Test nav={['game', 'Pre-Game Introduction']}></Test>
+          <Test nav={['Pre-Game Introduction', 'game']}></Test>
           {/* <Header style={{ background: '#fff', padding: 0 }}>
 
             
