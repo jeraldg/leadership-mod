@@ -21,7 +21,15 @@ export default class OptionsPage extends Component {
   componentWillUnmount = () => {
     // use timerId from the state to clear the interval
     clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
-    this.state.suspense.stop();
+    if (this.state.suspense != undefined){
+      this.state.suspense.stop();
+    } 
+    if (this.state.progressBarTimer != undefined){
+      clearInterval(this.state.progressBarTimer);
+    } 
+    if (this.state.progressBarShow != undefined){
+      clearInterval(this.state.progressBarShow);
+    } 
   }
 
   handleOnReady = () => {
@@ -31,6 +39,7 @@ export default class OptionsPage extends Component {
   }
 
   handleClick = (url) => {
+    console.log(this.state);
     FlowRouter.go(`/${url}`);
     if (this.props.options.length == 0){
       clearInterval(this.state.progressBarTimer, this.state.progressBarShow);
@@ -136,6 +145,7 @@ export default class OptionsPage extends Component {
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>
+                      <Button style={{ background: 'red', width: '100px', height: '100px', position: 'absolute', left: '0', display:'none' }} onClick={this.handleClick.bind(this, option.url)}></Button>
                     </div>
                   )
                 } else {
@@ -145,6 +155,7 @@ export default class OptionsPage extends Component {
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>
+                      <Button style={{ background: 'red', width: '100px', height: '100px', position: 'absolute', right: '0', display:'none' }} onClick={this.handleClick.bind(this, option.url)}></Button>
                     </div>
                   )
                 }
