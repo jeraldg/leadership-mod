@@ -34,7 +34,10 @@
         },
         "S3": {
             "options": [
-            
+                {
+                    "text": "Next",
+                    "url": "S3-2"
+                }
             ],
             "video": "S3",
             "url": "S3-2"
