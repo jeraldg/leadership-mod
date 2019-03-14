@@ -116,6 +116,12 @@
             ],
             "video": "S4B",
             "url": "/"
+        },
+        "ENDING": {
+            "options": [
+            ],
+            "video": "Ending",
+            "url": "/"
         }
     }
 }
