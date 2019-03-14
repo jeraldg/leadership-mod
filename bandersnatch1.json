@@ -34,17 +34,15 @@
         },
         "S3": {
             "options": [
-                {
-                    "text": "Continue",
-                    "url": "S3-2"
-                }
+            
             ],
-            "video": "S3"
+            "video": "S3",
+            "url": "S3-2"
         },
         "S3-2": {
             "options": [
                 {
-                    "text": "Scratch the current idea",
+                    "text": "Scrap the current idea",
                     "url": "S3A"
                 },
                 {

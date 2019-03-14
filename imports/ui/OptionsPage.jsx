@@ -74,15 +74,15 @@ export default class OptionsPage extends Component {
 
     return (
       <div>
-        <Row type="flex" justify="center" align="middle" style={{ paddingTop: "50px" }}>
+        <Row type="flex" justify="center" align="middle" style={{  }}>
           {/* <div className="player-wrapper"> */}
           <ReactPlayer url={`/videos/${video}.mp4`}
             muted={this.state.muted}
             playing={this.state.playing}
             onReady={this.handleOnReady}
             onEnded={this.onEnded}
-            width="1000px"
-            height="500px"
+            width="100vw"
+            height="auto !important"
             key={scenario}
             controls={true}
           />
