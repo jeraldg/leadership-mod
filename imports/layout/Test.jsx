@@ -46,7 +46,7 @@ export default class Test extends Component {
         </div>
         <div id="box">
           <div id="items">
-            {nav.map(navOption => <div class="item" onClick={this.handleClick.bind(this, navOption)}>{navOption}</div>)}
+            {nav.map((navOption, index) => <div className="item" key={`nav${index}`} onClick={this.handleClick.bind(this, navOption)}>{navOption}</div>)}
           </div>
         </div>
       </div>

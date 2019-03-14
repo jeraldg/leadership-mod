@@ -9,20 +9,24 @@ const ButtonGroup = Button.Group;
 
 export default class BanderSnatch extends Component {
 
-  
+
 
   render() {
 
     let scenario = FlowRouter.getParam('scenario').toUpperCase();
-    console.log(scenario)
+    let { options, video, url } = bandersnatch.scenarios[scenario];
+    if (url == undefined){
+      url = options[0].url;
+    }
 
     return (
       <div style={{ background: "black", height: '100vh' }}>
 
-        <OptionsPage 
-          options={bandersnatch.scenarios[scenario].options}
-          video={bandersnatch.scenarios[scenario].video}
-          scenario = {scenario}
+        <OptionsPage
+          options={options}
+          video={video}
+          scenario={scenario}
+          url={url}
         />
 
       </div>

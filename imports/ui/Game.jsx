@@ -18,7 +18,7 @@ export default class Game extends Component {
         <Row style={{ background: "#000" }} type="flex" justify="end" align="middle">
 
           <div style={{ display: 'flex', position: 'absolute', width: '100%' }}>
-            <Button style={{ margin: 'auto', position: 'relative' }} className="glow-button start-game" href='/Intro-1' >START GAME</Button>
+            <Button style={{ margin: 'auto', position: 'relative' }} className="glow-button" href='/Intro-1' >START GAME</Button>
           </div>
 
           <div style={{ width: '100%', height: '100vh', minWidth: '50%', background: 'url("/images/bander_wallpaper.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'right' }}>

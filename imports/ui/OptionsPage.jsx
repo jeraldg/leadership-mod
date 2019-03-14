@@ -14,32 +14,13 @@ export default class OptionsPage extends Component {
       playing: false,
       muted: true,
       changed: false,
-      url: props.options[0].url,
+      url: props.url,
     }
-  }
-
-
-  increase = () => {
-
-    if (this.state.percent >= 100) {
-      clearInterval(this.state.timerId);
-    }
-
-    this.setState((prevState) => ({ percent: prevState.percent + 1 }))
-
-  }
-
-  increaseWithTime = (seconds) => {
-    let timerId = setInterval(() => {
-      this.increase();
-    }, seconds);
-
-    this.setState({ timerId: timerId });
   }
 
   componentWillUnmount = () => {
     // use timerId from the state to clear the interval
-    clearInterval(this.state.timerId);
+    clearInterval(this.state.progressBarTimer);
   }
 
   handleOnReady = () => {
@@ -49,27 +30,29 @@ export default class OptionsPage extends Component {
   }
 
   handleClick = (url) => {
-    FlowRouter.go(`/game/${url}`);
-    clearInterval(this.state.timerId);
+    FlowRouter.go(`/${url}`);
+    clearInterval(this.state.progressBarTimer);
     this.setState({
       percent: 0,
       ended: false,
       playing: false,
       muted: true,
-      timerId: '',
       changed: false,
+      url: this.props.options[0].url,
     })
   }
 
   onEnded = () => {
-    console.log('came here')
     this.setState({ ended: true });
-    setTimeout(() => {
-      this.setState({ changed: true });
-    }, 1000);
-    setTimeout(() => {
+    if (this.props.options.length == 0){
       this.handleClick(this.state.url);
-    }, 6000);
+    } else {
+      let progressBarTimer = setTimeout(() => {
+        this.handleClick(this.state.url);
+      }, 11000);
+      this.setState({ progressBarTimer: progressBarTimer });
+    }
+    
   }
 
   handleChange = (url) => {
@@ -82,10 +65,10 @@ export default class OptionsPage extends Component {
     let size = "large";
     let { ended, changed } = this.state;
     let { options, question, video, scenario } = this.props;
-    let test = options.length==1 ? "end" : "center"
+    let optionsMissing = options.length==0 ? true : false
 
     return (
-      <div key="100">
+      <div>
         <Row type="flex" justify="center" align="middle" style={{ paddingTop: "50px" }}>
           {/* <div className="player-wrapper"> */}
           <ReactPlayer url={`/videos/${video}.mp4`}
@@ -96,16 +79,17 @@ export default class OptionsPage extends Component {
             width="1000px"
             height="500px"
             key={scenario}
+            controls={true}
           />
           {/* </div> */}
         </Row>
 
 
 
-        {ended &&
+        {ended && !optionsMissing &&
 
 
-          <div>
+          <div key={`div${this.state.url}`}>
             <div className="container">
               {changed && <input type="radio" className="radio" name="progress" value="zero" id="zero" key="zero" defaultChecked={changed} />}
 
@@ -124,7 +108,7 @@ export default class OptionsPage extends Component {
                 if (options.length == 1){
                   return (
                     <div style={{justifySelf: "end"}}>
-                      <input defaultChecked type="radio" name="choice" id={index} key={index} onChange={this.handleChange.bind(this, option.url)}/>
+                      <input defaultChecked type="radio" name="choice" id={index} key={option.url} onChange={this.handleChange.bind(this, option.url)}/>
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>
@@ -135,7 +119,7 @@ export default class OptionsPage extends Component {
                 if (index == 0) {
                   return (
                     <div style={{justifySelf: "center"}}>
-                      <input defaultChecked type="radio" name="choice" id={index} key={index} onChange={this.handleChange.bind(this, option.url)}/>
+                      <input defaultChecked type="radio" name="choice" id={index} key={option.url} onChange={this.handleChange.bind(this, option.url)}/>
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>
@@ -144,7 +128,7 @@ export default class OptionsPage extends Component {
                 } else {
                   return (
                     <div style={{justifySelf: "center"}}>
-                      <input type="radio" name="choice" id={index} key={index} onChange={this.handleChange.bind(this, option.url)}/>
+                      <input type="radio" name="choice" id={index} key={option.url} onChange={this.handleChange.bind(this, option.url)}/>
                       <Option htmlFor={index} key={index} >
                         {option.text}
                       </Option>

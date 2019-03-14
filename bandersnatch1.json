@@ -2,12 +2,9 @@
     "scenarios": {
         "INTRO-1": {
             "options": [
-                {
-                    "text": "Start Game",
-                    "url": "Intro"
-                }
             ],
-            "video": "leadership_intro"
+            "video": "intro-1",
+            "url": "Intro"
         },
         "INTRO": {
             "options": [
@@ -21,7 +18,7 @@
                 }
             ],
             "video": "Intro"
-        },
+        }, 
         "S1": {
             "options": [
                 {
