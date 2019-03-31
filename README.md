@@ -2,6 +2,10 @@
 
 This project is an adaptation of [Netflix's movie Black Mirror: Bandersnatch](https://www.netflix.com/sg/title/80988062) and I did this project to showcase a live scenario of leadership in university, where anyone can step up to be a leader at any phase of leadership
 
+## Live Website
+
+The project is live at leadersnatch.tk
+
 ## Setup
 
 ### Project setup
