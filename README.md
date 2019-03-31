@@ -4,7 +4,7 @@ This project is an adaptation of [Netflix's movie Black Mirror: Bandersnatch](ht
 
 ## Live Website
 
-The project is live at [leadersnatch.tk](leadersnatch.tk)
+The project is live at [leadersnatch.tk](https://leadersnatch.tk)
 
 ## Setup
 
